@@ -1,0 +1,21 @@
+/* FILE: /modules/dashboard/assets/css/dashboard.css */
+
+.muted{ color: var(--muted); }
+
+.grid{
+  margin-top: 12px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.card.mini{
+  padding: 12px;
+}
+
+.k{ color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+.v{ font-weight: 700; }
+
+@media (max-width: 700px){
+  .grid{ grid-template-columns: 1fr; }
+}

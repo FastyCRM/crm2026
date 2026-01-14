@@ -1,0 +1,23 @@
+/* =========================================================
+   FILE: /modules/auth/assets/css/auth.css
+   ROLE: auth module UI (flat, centered by guest shell)
+   ========================================================= */
+
+.auth-card{
+  width: 420px;
+}
+
+.form{
+  display:grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.links{
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.links a{
+  color: var(--primary);
+}
