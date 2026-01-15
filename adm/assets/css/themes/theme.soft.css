@@ -1,0 +1,56 @@
+/**
+ * FILE: /adm/assets/css/themes/theme.soft.css
+ * ROLE: цветная/пастельная (заметно отличается от light)
+ * NOTE: алиас для старого значения "color"
+ */
+
+html[data-theme="soft"],
+html[data-theme="color"]{
+  color-scheme: light;
+
+  /* ПАСТЕЛЬНЫЙ ФОН (сильно отличается от light) */
+  --bg:  #fff6ea;   /* тёплый крем */
+  --bg2: #eefaff;   /* холодная мята */
+
+  --text: #111827;
+  --muted: rgba(17,24,39,.62);
+  --border: rgba(17,24,39,.10);
+
+  /* Карточки чуть “теплее”, плотные */
+  --card:  rgba(255,255,255,.76);
+  --card2: rgba(255,255,255,.92);
+
+  /* ЦВЕТНЕЕ АКЦЕНТЫ */
+  --accent:  #2dd4bf;   /* бирюза */
+  --accent2: #fb7185;   /* коралл */
+
+  /* Hover ощутимее, чем в light */
+  --hover: rgba(17,24,39,.06);
+  --hover-strong: rgba(17,24,39,.11);
+
+  --focus: rgba(45,212,191,.22);
+
+  --input-bg: rgba(255,255,255,.94);
+  --input-bg-focus: #ffffff;
+  --input-border: rgba(17,24,39,.14);
+
+  /* Sidebar — не серый, а кремовый/пастель */
+  --sidebar-bg: rgba(255, 248, 236, .78);
+  --sidebar-border: rgba(17,24,39,.08);
+
+  --icon-default: rgba(17,24,39,.62);
+  --icon-active: #111827;
+
+  --shadow: 0 14px 28px rgba(17,24,39,.14);
+  --shadow-soft: 0 10px 20px rgba(17,24,39,.12);
+}
+
+/* Доп: подкрашиваем общий фон body ТОЛЬКО для soft через градиенты */
+html[data-theme="soft"] body,
+html[data-theme="color"] body{
+  background:
+    radial-gradient(1100px 650px at 18% 12%, rgba(45,212,191,.22), transparent 62%),
+    radial-gradient(900px 620px at 82% 18%, rgba(251,113,133,.20), transparent 60%),
+    radial-gradient(900px 650px at 65% 80%, rgba(168,85,247,.14), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+}

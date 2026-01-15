@@ -1,0 +1,19 @@
+/**
+ * FILE: /adm/assets/css/ui/notices.css
+ * ROLE: уведомления
+ * CONNECTIONS:
+ *  - импортируется через /adm/assets/css/main.css
+ */
+
+.notice{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  margin: 12px 0;
+}
+
+.notice.danger{
+  border-color: rgba(239,68,68,.28);
+  background: rgba(239,68,68,.08);
+}

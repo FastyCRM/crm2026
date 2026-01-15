@@ -1,0 +1,36 @@
+/**
+ * FILE: /adm/assets/css/base.css
+ * ROLE: базовые правила (без ломалки модулей)
+ * CONNECTIONS:
+ *  - импортируется через /adm/assets/css/main.css
+ */
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+
+body{
+  margin: 0;
+  font-family: var(--font);
+  font-size: var(--fs-14);
+  line-height: 1.4;
+  color: var(--text);
+
+  background:
+    radial-gradient(1100px 650px at 18% 12%, rgba(255,154,60,.18), transparent 60%),
+    radial-gradient(1000px 650px at 85% 20%, rgba(59,130,246,.16), transparent 62%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+}
+
+a{ color: inherit; text-decoration: none; }
+img{ max-width: 100%; display: block; }
+button, input, select, textarea{ font: inherit; }
+
+h1,h2,h3{ margin: 0 0 10px; font-weight: var(--fw-800); }
+p{ margin: 0 0 10px; }
+small{ color: var(--muted); }
+
+hr{
+  border: 0;
+  border-top: 1px solid var(--border);
+  opacity: .9;
+}

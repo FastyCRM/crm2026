@@ -1,0 +1,52 @@
+/**
+ * FILE: /adm/assets/css/shell/sidebar.css
+ * ROLE: sidebar (glass)
+ * CONNECTIONS:
+ *  - импортируется через /adm/assets/css/main.css
+ */
+
+.sidebar{
+  width: 240px;
+  flex: 0 0 240px;
+
+  border-right: 1px solid var(--sidebar-border);
+  background: var(--sidebar-bg);
+  backdrop-filter: blur(var(--blur));
+  color: var(--text);
+
+  display:flex;
+  flex-direction: column;
+}
+
+.sidebar-top{
+    padding: 12px 0px 12px 0px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: var(--fw-600);
+  margin-bottom: 8px;
+}
+
+.brand-badge{
+  width: 26px; height: 26px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: var(--shadow-soft);
+}
+
+.sidebar-bottom{
+  margin-top: auto;
+  padding: 12px 0px 12px 0px;
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.theme-label{
+  display:block;
+  font-size: var(--fs-12);
+  margin: 0 0 6px;
+  color: var(--muted);
+}

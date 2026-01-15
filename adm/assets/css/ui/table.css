@@ -1,0 +1,33 @@
+/**
+ * FILE: /adm/assets/css/ui/table.css
+ * ROLE: таблицы
+ * CONNECTIONS:
+ *  - импортируется через /adm/assets/css/main.css
+ */
+
+.table{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow:hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.05);
+}
+
+.table th, .table td{
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  text-align: left;
+  font-size: var(--fs-14);
+}
+
+.table th{
+  font-size: var(--fs-12);
+  color: var(--muted);
+  background: rgba(255,255,255,.05);
+}
+
+.table tr:hover td{
+  background: rgba(255,255,255,.06);
+}

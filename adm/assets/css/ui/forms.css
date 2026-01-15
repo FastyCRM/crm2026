@@ -1,0 +1,44 @@
+/**
+ * FILE: /adm/assets/css/ui/forms.css
+ * ROLE: формы/инпуты
+ * CONNECTIONS:
+ *  - импортируется через /adm/assets/css/main.css
+ */
+
+label{ display:block; margin: 2px 0 6px; color: var(--muted); }
+
+.input, .select, .textarea,
+input, select, textarea{
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 10px 12px;
+  /* border-radius: var(--radius-md); */
+  border: 1px solid var(--input-border);
+
+  background-color: var(--input-bg) !important;
+  color: var(--text) !important;
+
+  outline: none;
+}
+
+.input:focus, .select:focus, .textarea:focus,
+input:focus, select:focus, textarea:focus{
+  border-color: rgba(255,255,255,.18);
+  box-shadow: 0 0 0 4px var(--focus);
+  background-color: var(--input-bg-focus) !important;
+}
+
+/* caret */
+input, textarea, select{ caret-color: var(--text) !important; }
+
+/* Autofill fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill{
+  -webkit-text-fill-color: var(--text) !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--input-bg) inset !important;
+  box-shadow: 0 0 0px 1000px var(--input-bg) inset !important;
+}

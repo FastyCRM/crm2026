@@ -1,0 +1,55 @@
+/**
+ * FILE: /adm/assets/css/shell/topbar.css
+ * ROLE: topbar
+ * CONNECTIONS:
+ *  - импортируется через /adm/assets/css/main.css
+ */
+
+.topbar{
+  height: var(--topbar-h);
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 0 14px;
+
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  backdrop-filter: blur(var(--blur));
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.topbar-title{
+  font-weight: var(--fw-600);
+  letter-spacing: .2px;
+  color: var(--text);
+}
+
+/* burger */
+.burger{
+  width: 38px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.burger span{
+  display:block;
+  width: 16px;
+  height: 2px;
+  background: var(--text);
+  margin: 2px 0;
+}
+
+.nav-toggle{
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}

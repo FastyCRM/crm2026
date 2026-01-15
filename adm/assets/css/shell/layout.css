@@ -1,0 +1,24 @@
+/**
+ * FILE: /adm/assets/css/shell/layout.css
+ * ROLE: общий layout shell (без UI компонентов)
+ * CONNECTIONS:
+ *  - импортируется через /adm/assets/css/main.css
+ */
+
+body.is-guest .guest-main{
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 18px;
+}
+
+.adm-shell{
+  min-height: calc(100vh - var(--topbar-h));
+  display:flex;
+}
+
+.main{
+  flex: 1 1 auto;
+  padding: 0px;
+}

@@ -1,0 +1,51 @@
+/**
+ * FILE: /adm/assets/css/ui/cards.css
+ * ROLE: карточки (glass)
+ * CONNECTIONS:
+ *  - импортируется через /adm/assets/css/main.css
+ */
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  /* border-radius: var(--radius-xl); */
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(var(--blur));
+  overflow: hidden;
+  padding: 5px;
+}
+
+.card--soft{
+  background: var(--card2);
+  box-shadow: var(--shadow-soft);
+}
+
+.card__head{
+  padding: var(--pad-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.card__body{
+  padding: var(--pad-lg);
+}
+
+.kpi{
+  position: relative;
+  padding: var(--pad-lg);
+}
+.kpi::before{
+  content:"";
+  position:absolute;
+  inset:-60px;
+  background:
+    radial-gradient(circle at 22% 24%, rgba(255,255,255,.20), transparent 55%),
+    radial-gradient(circle at 85% 60%, rgba(255,255,255,.10), transparent 60%);
+  transform: rotate(10deg);
+  pointer-events:none;
+}
+.kpi > *{ position: relative; }
+.kpi__label{ color: var(--muted); font-size: var(--fs-12); }
+.kpi__value{ font-size: 26px; font-weight: var(--fw-600); margin-top: 6px; }

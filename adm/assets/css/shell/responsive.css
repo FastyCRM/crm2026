@@ -1,0 +1,25 @@
+/**
+ * FILE: /adm/assets/css/shell/responsive.css
+ * ROLE: адаптив (sidebar collapses)
+ * CONNECTIONS:
+ *  - импортируется через /adm/assets/css/main.css
+ */
+
+@media (max-width: 980px){
+  .burger{ display:flex; }
+
+  .sidebar{
+    position: fixed;
+    top: var(--topbar-h);
+    left: 0;
+    height: calc(100vh - var(--topbar-h));
+    z-index: 60;
+
+    transform: translateX(-105%);
+    transition: transform .2s ease;
+  }
+
+  #nav-toggle:checked ~ .topbar + .adm-shell .sidebar{
+    transform: translateX(0);
+  }
+}

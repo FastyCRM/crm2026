@@ -1,0 +1,22 @@
+/**
+ * FILE: /adm/assets/css/ui/helpers.css
+ * ROLE: утилиты (width/spacing/grid)
+ * CONNECTIONS:
+ *  - импортируется через /adm/assets/css/main.css
+ */
+
+.w100{ width: 100%; }
+.muted{ color: var(--muted); }
+.right{ margin-left: auto; }
+
+.grid{ display:grid; gap: 20px; }
+.grid--2{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+.grid--3{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+.stack{ display:flex; flex-direction: column; gap: var(--gap-md); }
+.row{ display:flex; align-items:center; gap: var(--gap-md); }
+
+.title{
+  font-size: var(--fs-20);
+  font-weight: var(--fw-600);
+}

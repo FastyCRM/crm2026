@@ -1,0 +1,49 @@
+/**
+ * FILE: /adm/assets/css/shell/menu.css
+ * ROLE: меню в sidebar
+ * CONNECTIONS:
+ *  - импортируется через /adm/assets/css/main.css
+ */
+
+.menu{
+  display:flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.menu-item{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+
+  padding: 10px 10px;
+  /* border-radius: var(--radius-lg); */
+
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+}
+
+.menu-item:hover{
+  background: var(--hover);
+  border-color: rgba(255,255,255,.10);
+}
+
+.menu-item.active{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.14);
+}
+
+.menu-title{
+  font-size: 13px;
+}
+
+.menu-icon{
+  font-size: 16px;
+  color: var(--icon-default);
+}
+
+.menu-item.active .menu-icon{
+  color: var(--icon-active);
+}

@@ -1,0 +1,54 @@
+/**
+ * FILE: /adm/assets/css/ui/buttons.css
+ * ROLE: кнопки
+ * CONNECTIONS:
+ *  - импортируется через /adm/assets/css/main.css
+ */
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 5px;
+
+  padding: 10px 12px;
+  /* border-radius: var(--radius-md); */
+  border: 1px solid var(--border);
+
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+  color: var(--text);
+
+  cursor: pointer;
+  user-select: none;
+  transition: transform .06s ease, background .12s ease, border-color .12s ease;
+}
+
+.btn:hover{
+  background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.07));
+  border-color: rgba(255,255,255,.16);
+}
+.btn:active{ transform: translateY(1px); }
+
+.btn.primary{
+  border-color: rgba(255,255,255,.18);
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #111;
+}
+
+.btn.ghost{
+  background: transparent;
+  border-color: rgba(255,255,255,.10);
+}
+
+.btn.danger{
+  background: linear-gradient(135deg, rgba(239,68,68,.92), rgba(245,158,11,.55));
+  color: #111;
+  border-color: rgba(255,255,255,.16);
+}
+
+.btn.sm{
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-12);
+}

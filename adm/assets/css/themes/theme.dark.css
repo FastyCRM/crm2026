@@ -1,0 +1,43 @@
+/**
+ * FILE: /adm/assets/css/themes/theme.dark.css
+ * ROLE: темная тема (контрастная, “чернильная”)
+ */
+
+html[data-theme="dark"],
+:root{
+  color-scheme: dark;
+
+  --bg:  #0b0f16;
+  --bg2: #0a1220;
+
+  --text: #e9eef5;
+  --muted: rgba(233,238,245,.70);
+  --border: rgba(255,255,255,.12);
+
+  /* меньше прозрачности (плотнее) */
+  --card:  rgba(255,255,255,.10);
+  --card2: rgba(255,255,255,.14);
+
+  /* тёплый акцент */
+  --accent:  #ff9a3c;
+  --accent2: #ffd08a;
+
+  /* ховеры должны быть заметны */
+  --hover: rgba(255,255,255,.10);
+  --hover-strong: rgba(255,255,255,.16);
+
+  --focus: rgba(255,154,60,.16);
+
+  --input-bg: rgba(255,255,255,.08);
+  --input-bg-focus: rgba(255,255,255,.10);
+  --input-border: rgba(255,255,255,.16);
+
+  --sidebar-bg: rgba(255,255,255,.06);
+  --sidebar-border: rgba(255,255,255,.10);
+
+  --icon-default: rgba(233,238,245,.72);
+  --icon-active: #ffffff;
+
+  --shadow: 0 14px 34px rgba(0,0,0,.38);
+  --shadow-soft: 0 10px 22px rgba(0,0,0,.26);
+}

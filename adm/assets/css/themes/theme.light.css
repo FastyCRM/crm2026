@@ -1,0 +1,39 @@
+/**
+ * FILE: /adm/assets/css/themes/theme.light.css
+ * ROLE: светлая тема (сероватая, строгая)
+ */
+
+html[data-theme="light"]{
+  color-scheme: light;
+
+  --bg:  #f2f4f7;
+  --bg2: #e9edf3;
+
+  --text: #111827;
+  --muted: rgba(17,24,39,.62);
+  --border: rgba(17,24,39,.10);
+
+  --card:  rgba(255,255,255,.82);
+  --card2: rgba(255,255,255,.94);
+
+  --accent:  #3b82f6;
+  --accent2: #a5b4fc;
+
+  --hover: rgba(17,24,39,.05);
+  --hover-strong: rgba(17,24,39,.09);
+
+  --focus: rgba(59,130,246,.14);
+
+  --input-bg: rgba(255,255,255,.92);
+  --input-bg-focus: #ffffff;
+  --input-border: rgba(17,24,39,.14);
+
+  --sidebar-bg: rgba(255,255,255,.62);
+  --sidebar-border: rgba(17,24,39,.08);
+
+  --icon-default: rgba(17,24,39,.58);
+  --icon-active: #111827;
+
+  --shadow: 0 14px 28px rgba(17,24,39,.12);
+  --shadow-soft: 0 10px 20px rgba(17,24,39,.10);
+}

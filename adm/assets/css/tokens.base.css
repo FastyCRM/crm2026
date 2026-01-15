@@ -1,0 +1,46 @@
+/**
+ * FILE: /adm/assets/css/tokens.base.css
+ * ROLE: базовые токены UI (геометрия/типографика/константы)
+ * NOTE:
+ *  - НИКАКИХ цветов темы тут нет (bg/text/card/hover и т.п.)
+ *  - Цвета живут только в /themes/theme.*.css
+ */
+
+:root{
+  --topbar-h: 60px;
+
+  /* строгие радиусы (меньше “круглости”) */
+  --radius-xl: 12px;
+  --radius-lg: 10px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
+
+  --pad-xl: 18px;
+  --pad-lg: 16px;
+  --pad-md: 12px;
+  --pad-sm: 10px;
+
+  --gap-lg: 16px;
+  --gap-md: 12px;
+  --gap-sm: 10px;
+
+  --blur: 12px;
+
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --fs-12: 12px;
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-20: 20px;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-800: 800;
+
+  /* shadows — темы могут менять, но дефолт норм */
+  --shadow: 0 14px 34px rgba(0,0,0,.28);
+  --shadow-soft: 0 10px 22px rgba(0,0,0,.20);
+
+  /* status (универсальные) */
+  --ok: #22c55e;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+}

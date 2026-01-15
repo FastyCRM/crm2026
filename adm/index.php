@@ -1,10 +1,13 @@
 <?php
 /**
  * FILE: /adm/index.php
- * ROLE: Shell админки
- * UX:
- *  - guest (не залогинен): без sidebar, контент по центру экрана
- *  - auth (залогинен): sidebar + topbar с бургером (адаптив), тема+выход внизу
+ * ROLE: Shell админки (layout + подключение дизайн-системы + рендер модуля)
+ * CONNECTIONS:
+ *  - require_once ROOT_PATH . '/core/bootstrap.php'
+ *  - грузит модуль view: /modules/<m>/<m>.php
+ *  - handler: /modules/<m>/assets/php/handler.php
+ *  - CSS: /adm/assets/css/main.css (единственная системная точка входа)
+ *  - Module CSS/JS: /modules/<m>/assets/css/<m>.css и /modules/<m>/assets/js/<m>.js (если существуют)
  */
 
 declare(strict_types=1);
@@ -15,13 +18,8 @@ if (!defined('ROOT_PATH')) {
 
 require_once ROOT_PATH . '/core/bootstrap.php';
 
-
 /**
- * Собрать меню из /modules/all/settings.php
- * - берет только enabled=1 и menu=1
- * - фильтрует по roles (если roles пустой или не массив -> доступно всем)
- * - сортирует по sort ASC
- * - формирует href вида /adm/index.php?m=<module>
+ * Собрать меню из /modules//settings.php
  *
  * @param string $userRole Текущая роль пользователя: admin|manager|user
  * @return array<int, array<string, mixed>>
@@ -57,7 +55,9 @@ function adm_get_menu_modules(string $userRole): array
 
         $icon = trim((string)($cfg['icon'] ?? 'bi-dot'));
         if ($icon === '') $icon = 'bi-dot';
-        if (strpos($icon, 'bi-') !== 0) $icon = 'bi-' . $icon;
+        if (strpos($icon, 'bi-') !== 0) {
+            $icon = 'bi-' . $icon;
+        }
 
         $items[] = [
             'code'       => $module,
@@ -69,13 +69,12 @@ function adm_get_menu_modules(string $userRole): array
         ];
     }
 
-    usort($items, function ($a, $b) {
+    usort($items, static function ($a, $b) {
         return ($a['sort'] <=> $b['sort']);
     });
 
     return $items;
 }
-
 
 $m = isset($_GET['m']) ? clean((string)$_GET['m']) : '';
 $a = isset($_GET['a']) ? clean((string)$_GET['a']) : '';
@@ -121,11 +120,16 @@ if (!is_file($view)) {
     exit('Module view not found');
 }
 
-$theme = auth_user_theme();
+$theme = (string)auth_user_theme();
+if ($theme === '') $theme = 'dark';
+
+/* backward compat: если в БД лежит color — считаем это soft */
+if ($theme === 'color') $theme = 'soft';
+
 $csrf  = csrf_token();
 
 /**
- * Меню пока минимальное
+ * Меню
  */
 $menuItems = [];
 if ($isAuth) {
@@ -133,72 +137,62 @@ if ($isAuth) {
     $menuItems = adm_get_menu_modules($userRole);
 }
 
+/**
+ * Helpers: проверить наличие модульных ассетов, чтобы не стрелять 404
+ */
+$moduleCssFs = ROOT_PATH . '/modules/' . $m . '/assets/css/' . $m . '.css';
+$moduleCssUrl = '/modules/' . $m . '/assets/css/' . $m . '.css';
 
-/* FIX ICONS:
-   УБРАЛИ эти строки, потому что $item тут ещё не существует:
-   $icon = $item['icon'] ?? 'bi-dot';
-   $igroup = $item['icon_group'] ?? 'neutral';
-*/
+$moduleJsFs  = ROOT_PATH . '/modules/' . $m . '/assets/js/' . $m . '.js';
+$moduleJsUrl = '/modules/' . $m . '/assets/js/' . $m . '.js';
+
 ?>
 <!doctype html>
-<html lang="ru" data-theme="<?= htmlspecialchars($theme) ?>">
+<html lang="ru" data-theme="<?= htmlspecialchars($theme, ENT_QUOTES) ?>">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>FastyCRM/Admin</title>
+  <title>CRM2026 / Admin</title>
 
   <link rel="stylesheet" href="/adm/assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="/adm/assets/css/main.css">
-  <link rel="stylesheet" href="/adm/assets/css/adm.css">
 
-  <?php
-    $moduleCss = '/modules/' . $m . '/assets/css/' . $m . '.css';
-    echo '<link rel="stylesheet" href="' . htmlspecialchars($moduleCss) . '">';
-  ?>
+  <?php if (is_file($moduleCssFs)): ?>
+    <link rel="stylesheet" href="<?= htmlspecialchars($moduleCssUrl, ENT_QUOTES) ?>">
+  <?php endif; ?>
 </head>
 
 <body class="<?= $isAuth ? 'is-auth' : 'is-guest' ?>">
 <?php if ($isAuth): ?>
-  <!-- CSS-only бургер: чекбокс + label -->
   <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
 
   <header class="topbar">
     <label for="nav-toggle" class="burger" aria-label="Меню">
       <span></span><span></span><span></span>
     </label>
-    <div class="topbar-title">crm2026</div>
+    <div class="topbar-title">CRM2026</div>
   </header>
 
   <div class="adm-shell">
     <aside class="sidebar">
       <div class="sidebar-top">
-        <div class="brand">FastyCRM</div>
+        <div class="brand">
+          <span class="brand-badge" aria-hidden="true"></span>
+          <span>CRM2026</span>
+        </div>
 
         <nav class="menu">
           <?php foreach ($menuItems as $item): ?>
             <?php
               $active = ($m === $item['code']);
-
-              // FIX ICONS: считаем ИКОНКУ и ГРУППУ на каждый пункт меню
-              $icon = isset($item['icon']) ? trim((string)$item['icon']) : '';
-              if ($icon === '') $icon = 'bi-dot';
-
-              // Если ты вдруг будешь хранить без "bi-" — добавим автоматически
-              if (strpos($icon, 'bi-') !== 0) {
-                  $icon = 'bi-' . $icon;
-              }
-
-                $igroup = $item['icon_group'] ?? 'neutral';
-                $icon   = $item['icon'] ?? 'bi-dot';
-
+              $icon   = (string)($item['icon'] ?? 'bi-dot');
+              $igroup = (string)($item['icon_group'] ?? 'neutral');
             ?>
-
             <a class="menu-item <?= $active ? 'active' : '' ?>"
-               href="<?= htmlspecialchars($item['href']) ?>"
-               data-igroup="<?= htmlspecialchars($igroup) ?>">
-              <i class="bi <?= htmlspecialchars($icon) ?> menu-icon"></i>
-
-              <span class="menu-title"><?= htmlspecialchars($item['title']) ?></span>
+               href="<?= htmlspecialchars($item['href'], ENT_QUOTES) ?>"
+               data-igroup="<?= htmlspecialchars($igroup, ENT_QUOTES) ?>">
+              <i class="bi <?= htmlspecialchars($icon, ENT_QUOTES) ?> menu-icon"></i>
+              <span class="menu-title"><?= htmlspecialchars($item['title'], ENT_QUOTES) ?></span>
             </a>
           <?php endforeach; ?>
         </nav>
@@ -206,13 +200,13 @@ if ($isAuth) {
 
       <div class="sidebar-bottom">
         <form class="theme-box" method="post" action="/adm/index.php?m=auth&a=set_theme">
-          <input type="hidden" name="_csrf" value="<?= htmlspecialchars($csrf) ?>">
+          <input type="hidden" name="_csrf" value="<?= htmlspecialchars($csrf, ENT_QUOTES) ?>">
           <label class="theme-label">Тема</label>
 
-          <select name="theme" class="theme-select" onchange="this.form.submit()">
+          <select name="theme" class="select" onchange="this.form.submit()">
             <option value="light" <?= $theme === 'light' ? 'selected' : '' ?>>Светлая</option>
             <option value="dark"  <?= $theme === 'dark'  ? 'selected' : '' ?>>Тёмная</option>
-            <option value="color" <?= $theme === 'color' ? 'selected' : '' ?>>Цветная</option>
+            <option value="soft"  <?= $theme === 'soft'  ? 'selected' : '' ?>>Цветная</option>
           </select>
         </form>
 
@@ -226,7 +220,6 @@ if ($isAuth) {
   </div>
 
 <?php else: ?>
-  <!-- Гость: без меню, контент строго по центру -->
   <main class="guest-main">
     <?php require_once $view; ?>
   </main>
@@ -234,9 +227,9 @@ if ($isAuth) {
 
   <script src="/adm/assets/js/main.js"></script>
   <script src="/adm/assets/js/adm.js"></script>
-  <?php
-    $moduleJs = '/modules/' . $m . '/assets/js/' . $m . '.js';
-    echo '<script src="' . htmlspecialchars($moduleJs) . '"></script>';
-  ?>
+
+  <?php if (is_file($moduleJsFs)): ?>
+    <script src="<?= htmlspecialchars($moduleJsUrl, ENT_QUOTES) ?>"></script>
+  <?php endif; ?>
 </body>
 </html>
