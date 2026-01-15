@@ -1,0 +1,21 @@
+/**
+ * FILE: /modules/users/assets/css/users.css
+ * ROLE: точечные стили модуля Users (без глобальных селекторов)
+ */
+.users-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+}
+
+.users-modal__backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.35);
+}
+
+.users-modal__panel{
+  position: relative;
+  width: min(860px, calc(100% - 24px));
+  margin: 70px auto;
+}

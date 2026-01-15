@@ -374,35 +374,29 @@ function auth_reset_apply(string $token, string $newPassword): bool
 
 function auth_user_role(): string
 {
-    if (!auth_is_logged_in()) {
-        return 'guest';
-    }
+    static $cached = null;
+    if ($cached !== null) return $cached;
 
-    // Если роль уже есть в сессии — используем её
-    if (!empty($_SESSION['user_role'])) {
-        return (string)$_SESSION['user_role'];
-    }
+    $uid = auth_user_id();
+    if (!$uid) return 'guest';
 
-    // Иначе берём user_id и тянем из БД
-    $userId = (int)($_SESSION['user_id'] ?? 0);
-    if ($userId <= 0) {
-        return 'user';
-    }
+    $pdo = db(); // или pdo()
 
-    // db() должна возвращать PDO (у тебя она уже должна быть в core)
-    $pdo = db();
+    $sql = "SELECT r.code
+            FROM user_roles ur
+            JOIN roles r ON r.id = ur.role_id
+            WHERE ur.user_id = ?
+            ORDER BY r.sort ASC
+            LIMIT 1";
+    $st = $pdo->prepare($sql);
+    $st->execute([(int)$uid]);
+    $role = (string)($st->fetchColumn() ?: 'user');
 
-    $stmt = $pdo->prepare("SELECT role FROM users WHERE id = :id LIMIT 1");
-    $stmt->execute([':id' => $userId]);
-    $role = (string)($stmt->fetchColumn() ?: 'user');
+    $role = trim($role);
+    if (!in_array($role, ['admin','manager','user'], true)) $role = 'user';
 
-    // Нормализуем на всякий
-    if (!in_array($role, ['admin', 'manager', 'user'], true)) {
-        $role = 'user';
-    }
+    // можно обновлять в сессии для UI
+    $_SESSION['role'] = $role;
 
-    // Кэшируем в сессии, чтобы не лупить БД
-    $_SESSION['user_role'] = $role;
-
-    return $role;
+    return $cached = $role;
 }

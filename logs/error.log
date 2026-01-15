@@ -1,0 +1,18 @@
+[15-Jan-2026 14:47:58 Europe/Moscow] [2026-01-15 14:47:58] EXCEPTION: Call to undefined function json_out() in D:\OpenServer\domains\crm2026\modules\users\assets\php\handler.php:145
+#0 D:\OpenServer\domains\crm2026\adm\index.php(110): require_once()
+#1 {main}
+
+
+[15-Jan-2026 14:48:07 Europe/Moscow] [2026-01-15 14:48:07] EXCEPTION: Call to undefined function json_out() in D:\OpenServer\domains\crm2026\modules\users\assets\php\handler.php:145
+#0 D:\OpenServer\domains\crm2026\adm\index.php(110): require_once()
+#1 {main}
+
+
+[15-Jan-2026 15:09:27 Europe/Moscow] [2026-01-15 15:09:27] EXCEPTION: There is already an active transaction in D:\OpenServer\domains\crm2026\modules\users\lib\service.php:54
+#0 D:\OpenServer\domains\crm2026\modules\users\lib\service.php(54): PDO->beginTransaction()
+#1 D:\OpenServer\domains\crm2026\modules\users\lib\service.php(147): users_set_role()
+#2 D:\OpenServer\domains\crm2026\modules\users\assets\php\handler.php(100): users_create()
+#3 D:\OpenServer\domains\crm2026\adm\index.php(110): require_once('D:\\OpenServer\\d...')
+#4 {main}
+
+
