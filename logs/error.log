@@ -16,3 +16,100 @@
 #4 {main}
 
 
+[21-Jan-2026 14:44:04 Europe/Moscow] [2026-01-21 14:44:04] PHP_ERROR 2: Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:04 Europe/Moscow] PHP Warning:  Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:04 Europe/Moscow] [2026-01-21 14:44:04] PHP_ERROR 2: require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:04 Europe/Moscow] PHP Warning:  require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:04 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required 'CORE_PATH/modules.php' (include_path='.') in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:06 Europe/Moscow] [2026-01-21 14:44:06] PHP_ERROR 2: Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:06 Europe/Moscow] PHP Warning:  Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:06 Europe/Moscow] [2026-01-21 14:44:06] PHP_ERROR 2: require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:06 Europe/Moscow] PHP Warning:  require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:06 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required 'CORE_PATH/modules.php' (include_path='.') in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:06 Europe/Moscow] [2026-01-21 14:44:06] PHP_ERROR 2: Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:06 Europe/Moscow] PHP Warning:  Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:06 Europe/Moscow] [2026-01-21 14:44:06] PHP_ERROR 2: require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:06 Europe/Moscow] PHP Warning:  require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:06 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required 'CORE_PATH/modules.php' (include_path='.') in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:07 Europe/Moscow] [2026-01-21 14:44:07] PHP_ERROR 2: Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:07 Europe/Moscow] PHP Warning:  Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:07 Europe/Moscow] [2026-01-21 14:44:07] PHP_ERROR 2: require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:07 Europe/Moscow] PHP Warning:  require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:07 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required 'CORE_PATH/modules.php' (include_path='.') in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:07 Europe/Moscow] [2026-01-21 14:44:07] PHP_ERROR 2: Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:07 Europe/Moscow] PHP Warning:  Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:07 Europe/Moscow] [2026-01-21 14:44:07] PHP_ERROR 2: require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:07 Europe/Moscow] PHP Warning:  require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:07 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required 'CORE_PATH/modules.php' (include_path='.') in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:07 Europe/Moscow] [2026-01-21 14:44:07] PHP_ERROR 2: Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:07 Europe/Moscow] PHP Warning:  Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:07 Europe/Moscow] [2026-01-21 14:44:07] PHP_ERROR 2: require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:07 Europe/Moscow] PHP Warning:  require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:07 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required 'CORE_PATH/modules.php' (include_path='.') in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:08 Europe/Moscow] [2026-01-21 14:44:08] PHP_ERROR 2: Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:08 Europe/Moscow] PHP Warning:  Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:08 Europe/Moscow] [2026-01-21 14:44:08] PHP_ERROR 2: require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:08 Europe/Moscow] PHP Warning:  require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:08 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required 'CORE_PATH/modules.php' (include_path='.') in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:19 Europe/Moscow] [2026-01-21 14:44:19] PHP_ERROR 2: Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:19 Europe/Moscow] PHP Warning:  Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:19 Europe/Moscow] [2026-01-21 14:44:19] PHP_ERROR 2: require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:19 Europe/Moscow] PHP Warning:  require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:19 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required 'CORE_PATH/modules.php' (include_path='.') in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:20 Europe/Moscow] [2026-01-21 14:44:20] PHP_ERROR 2: Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:20 Europe/Moscow] PHP Warning:  Use of undefined constant CORE_PATH - assumed 'CORE_PATH' (this will throw an Error in a future version of PHP) in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:20 Europe/Moscow] [2026-01-21 14:44:20] PHP_ERROR 2: require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:44:20 Europe/Moscow] PHP Warning:  require_once(CORE_PATH/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:44:20 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required 'CORE_PATH/modules.php' (include_path='.') in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:46:39 Europe/Moscow] [2026-01-21 14:46:39] PHP_ERROR 2: require_once(D:\OpenServer\domains\crm2026core/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:46:39 Europe/Moscow] PHP Warning:  require_once(D:\OpenServer\domains\crm2026core/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:46:39 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required 'D:\OpenServer\domains\crm2026core/modules.php' (include_path='.') in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:46:41 Europe/Moscow] [2026-01-21 14:46:41] PHP_ERROR 2: require_once(D:\OpenServer\domains\crm2026core/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:46:41 Europe/Moscow] PHP Warning:  require_once(D:\OpenServer\domains\crm2026core/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:46:41 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required 'D:\OpenServer\domains\crm2026core/modules.php' (include_path='.') in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:46:44 Europe/Moscow] [2026-01-21 14:46:44] PHP_ERROR 2: require_once(D:\OpenServer\domains\crm2026core/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php:134
+
+[21-Jan-2026 14:46:44 Europe/Moscow] PHP Warning:  require_once(D:\OpenServer\domains\crm2026core/modules.php): failed to open stream: No such file or directory in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:46:44 Europe/Moscow] PHP Fatal error:  require_once(): Failed opening required 'D:\OpenServer\domains\crm2026core/modules.php' (include_path='.') in D:\OpenServer\domains\crm2026\adm\index.php on line 134
+[21-Jan-2026 14:47:06 Europe/Moscow] [2026-01-21 14:47:06] EXCEPTION: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'icon_group' in 'field list' in D:\OpenServer\domains\crm2026\core\modules.php:15
+#0 D:\OpenServer\domains\crm2026\core\modules.php(15): PDO->prepare()
+#1 D:\OpenServer\domains\crm2026\adm\index.php(138): modules_get_menu()
+#2 {main}
+
+
+[21-Jan-2026 14:53:31 Europe/Moscow] [2026-01-21 14:53:31] EXCEPTION: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'icon_group' in 'field list' in D:\OpenServer\domains\crm2026\core\modules.php:77
+#0 D:\OpenServer\domains\crm2026\core\modules.php(77): PDO->prepare()
+#1 D:\OpenServer\domains\crm2026\adm\index.php(92): modules_get_menu()
+#2 {main}
+
+
+[21-Jan-2026 15:23:06 Europe/Moscow] [2026-01-21 15:23:06] EXCEPTION: Call to undefined function csrf_verify() in D:\OpenServer\domains\crm2026\modules\modules\assets\php\handler.php:32
+#0 D:\OpenServer\domains\crm2026\adm\index.php(65): require_once()
+#1 {main}
+
+
+[21-Jan-2026 15:23:16 Europe/Moscow] [2026-01-21 15:23:16] EXCEPTION: Call to undefined function csrf_verify() in D:\OpenServer\domains\crm2026\modules\modules\assets\php\handler.php:32
+#0 D:\OpenServer\domains\crm2026\adm\index.php(65): require_once()
+#1 {main}
+
+

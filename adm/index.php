@@ -4,6 +4,7 @@
  * ROLE: Shell админки (layout + подключение дизайн-системы + рендер модуля)
  * CONNECTIONS:
  *  - require_once ROOT_PATH . '/core/bootstrap.php'
+ *  - меню берётся из БД (таблица modules) через core/modules.php
  *  - грузит модуль view: /modules/<m>/<m>.php
  *  - handler: /modules/<m>/assets/php/handler.php
  *  - CSS: /adm/assets/css/main.css (единственная системная точка входа)
@@ -17,64 +18,7 @@ if (!defined('ROOT_PATH')) {
 }
 
 require_once ROOT_PATH . '/core/bootstrap.php';
-
-/**
- * Собрать меню из /modules//settings.php
- *
- * @param string $userRole Текущая роль пользователя: admin|manager|user
- * @return array<int, array<string, mixed>>
- */
-function adm_get_menu_modules(string $userRole): array
-{
-    $dir = ROOT_PATH . '/modules';
-    if (!is_dir($dir)) return [];
-
-    $items = [];
-    $list = scandir($dir);
-    if ($list === false) return [];
-
-    foreach ($list as $module) {
-        if ($module === '.' || $module === '..') continue;
-
-        $modulePath = $dir . '/' . $module;
-        if (!is_dir($modulePath)) continue;
-
-        $settingsFile = $modulePath . '/settings.php';
-        if (!is_file($settingsFile)) continue;
-
-        $cfg = require $settingsFile;
-        if (!is_array($cfg)) continue;
-
-        if ((int)($cfg['enabled'] ?? 0) !== 1) continue;
-        if ((int)($cfg['menu'] ?? 0) !== 1) continue;
-
-        $roles = $cfg['roles'] ?? [];
-        if (is_array($roles) && count($roles) > 0) {
-            if (!in_array($userRole, $roles, true)) continue;
-        }
-
-        $icon = trim((string)($cfg['icon'] ?? 'bi-dot'));
-        if ($icon === '') $icon = 'bi-dot';
-        if (strpos($icon, 'bi-') !== 0) {
-            $icon = 'bi-' . $icon;
-        }
-
-        $items[] = [
-            'code'       => $module,
-            'title'      => (string)($cfg['name'] ?? $module),
-            'href'       => '/adm/index.php?m=' . urlencode($module),
-            'sort'       => (int)($cfg['sort'] ?? 100),
-            'icon'       => $icon,
-            'icon_group' => (string)($cfg['icon_group'] ?? 'neutral'),
-        ];
-    }
-
-    usort($items, static function ($a, $b) {
-        return ($a['sort'] <=> $b['sort']);
-    });
-
-    return $items;
-}
+require_once ROOT_PATH . '/core/modules.php';
 
 $m = isset($_GET['m']) ? clean((string)$_GET['m']) : '';
 $a = isset($_GET['a']) ? clean((string)$_GET['a']) : '';
@@ -96,6 +40,17 @@ if (!$isAuth) {
  */
 if ($isAuth && $m === '') {
     $m = 'dashboard';
+}
+
+/**
+ * Защита: если модуль отключён в БД — 404 (и view, и handler)
+ * auth оставляем как системный (но он тоже у тебя в БД enabled=1).
+ */
+if ($m !== 'auth' && $m !== '') {
+    if (!module_is_enabled($m)) {
+        http_response_code(404);
+        exit('Module disabled');
+    }
 }
 
 /**
@@ -129,22 +84,22 @@ if ($theme === 'color') $theme = 'soft';
 $csrf  = csrf_token();
 
 /**
- * Меню
+ * Меню (ТОЛЬКО из БД)
  */
 $menuItems = [];
 if ($isAuth) {
     $userRole = auth_user_role(); // admin|manager|user
-    $menuItems = adm_get_menu_modules($userRole);
+    $menuItems = modules_get_menu($userRole);
 }
 
 /**
  * Helpers: проверить наличие модульных ассетов, чтобы не стрелять 404
  */
-$moduleCssFs = ROOT_PATH . '/modules/' . $m . '/assets/css/' . $m . '.css';
+$moduleCssFs  = ROOT_PATH . '/modules/' . $m . '/assets/css/' . $m . '.css';
 $moduleCssUrl = '/modules/' . $m . '/assets/css/' . $m . '.css';
 
-$moduleJsFs  = ROOT_PATH . '/modules/' . $m . '/assets/js/' . $m . '.js';
-$moduleJsUrl = '/modules/' . $m . '/assets/js/' . $m . '.js';
+$moduleJsFs   = ROOT_PATH . '/modules/' . $m . '/assets/js/' . $m . '.js';
+$moduleJsUrl  = '/modules/' . $m . '/assets/js/' . $m . '.js';
 
 ?>
 <!doctype html>
@@ -206,7 +161,7 @@ $moduleJsUrl = '/modules/' . $m . '/assets/js/' . $m . '.js';
           <select name="theme" class="select" onchange="this.form.submit()">
             <option value="light" <?= $theme === 'light' ? 'selected' : '' ?>>Светлая</option>
             <option value="dark"  <?= $theme === 'dark'  ? 'selected' : '' ?>>Тёмная</option>
-            <option value="color"  <?= $theme === 'color'  ? 'selected' : '' ?>>Цветная</option>
+            <option value="color" <?= $theme === 'soft'  ? 'selected' : '' ?>>Цветная</option>
           </select>
         </form>
 
