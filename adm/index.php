@@ -206,7 +206,7 @@ $moduleJsUrl = '/modules/' . $m . '/assets/js/' . $m . '.js';
           <select name="theme" class="select" onchange="this.form.submit()">
             <option value="light" <?= $theme === 'light' ? 'selected' : '' ?>>Светлая</option>
             <option value="dark"  <?= $theme === 'dark'  ? 'selected' : '' ?>>Тёмная</option>
-            <option value="soft"  <?= $theme === 'soft'  ? 'selected' : '' ?>>Цветная</option>
+            <option value="color"  <?= $theme === 'color'  ? 'selected' : '' ?>>Цветная</option>
           </select>
         </form>
 
