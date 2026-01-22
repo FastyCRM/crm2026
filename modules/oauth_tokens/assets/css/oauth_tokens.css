@@ -1,0 +1,45 @@
+/**
+ * FILE: /modules/oauth_tokens/assets/css/oauth_tokens.css
+ * ROLE: стили модуля OAuth Tokens (без глобальных селекторов)
+ */
+
+.oauth-tokens__help{
+  margin-top: 6px;
+  opacity: .75;
+  font-size: 12px;
+}
+
+.oauth-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+}
+
+.oauth-modal__backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.45);
+}
+
+.oauth-modal__panel{
+  position: relative;
+  width: min(860px, calc(100% - 24px));
+  margin: 70px auto;
+}
+
+.oauth-grid-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 740px){
+  .oauth-grid-2{ grid-template-columns: 1fr; }
+}
+
+.oauth-actions-row{
+  display:flex;
+  gap:10px;
+  justify-content:flex-end;
+  margin-top: 14px;
+}

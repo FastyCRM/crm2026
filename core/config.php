@@ -10,10 +10,18 @@ return [
   'db' => [
     'host' => 'localhost',
     'name' => 'crm2026',
+    'port' => 8889,
     'user' => 'root',
-    'pass' => '',
+    'pass' => 'root',
     'charset' => 'utf8mb4',
   ],
+  // 'db' => [
+  //   'host' => 'localhost',
+  //   'name' => 'crm2026',
+  //   'user' => 'root',
+  //   'pass' => '',
+  //   'charset' => 'utf8mb4',
+  // ],
   'security' => [
     'app_secret' => 'CHANGE_ME__LONG_RANDOM_SECRET__64+_CHARS',
     'session_cookie_name' => 'mini_crm_sid',

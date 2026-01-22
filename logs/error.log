@@ -113,3 +113,160 @@
 #1 {main}
 
 
+[21-Jan-2026 15:45:19 UTC] [2026-01-21 15:45:19] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 15:45:28 UTC] [2026-01-21 15:45:28] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 15:45:40 UTC] [2026-01-21 15:45:40] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/adm/index.php(20): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 15:45:40 UTC] [2026-01-21 15:45:40] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/adm/index.php(20): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 15:45:55 UTC] [2026-01-21 15:45:55] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 15:46:01 UTC] [2026-01-21 15:46:01] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/adm/index.php(20): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 15:47:18 UTC] [2026-01-21 15:47:18] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 15:59:31 UTC] [2026-01-21 15:59:31] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 16:00:25 UTC] [2026-01-21 16:00:25] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 16:00:32 UTC] [2026-01-21 16:00:32] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 16:00:38 UTC] [2026-01-21 16:00:38] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 16:00:44 UTC] [2026-01-21 16:00:44] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 16:00:51 UTC] [2026-01-21 16:00:51] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 16:00:55 UTC] [2026-01-21 16:00:55] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 16:00:59 UTC] [2026-01-21 16:00:59] EXCEPTION: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 16:04:56 UTC] [2026-01-21 16:04:56] EXCEPTION: SQLSTATE[HY000] [1049] Unknown database 'crm2026' in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 16:05:17 UTC] [2026-01-21 16:05:17] EXCEPTION: SQLSTATE[HY000] [1049] Unknown database 'crm2026' in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 16:05:20 UTC] [2026-01-21 16:05:20] EXCEPTION: SQLSTATE[HY000] [1049] Unknown database 'crm2026' in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[21-Jan-2026 16:05:22 UTC] [2026-01-21 16:05:22] EXCEPTION: SQLSTATE[HY000] [1049] Unknown database 'crm2026' in /Applications/MAMP/htdocs/crm2026/core/db.php:26
+#0 /Applications/MAMP/htdocs/crm2026/core/db.php(26): PDO->__construct('mysql:host=loca...', 'root', 'root', Array)
+#1 /Applications/MAMP/htdocs/crm2026/core/auth.php(204): db()
+#2 /Applications/MAMP/htdocs/crm2026/core/bootstrap.php(87): auth_restore_from_cookie()
+#3 /Applications/MAMP/htdocs/crm2026/index.php(6): require_once('/Applications/M...')
+#4 {main}
+
+
+[22-Jan-2026 05:43:47 UTC] [2026-01-22 05:43:47] EXCEPTION: Call to undefined function auth_is_admin() in /Applications/MAMP/htdocs/crm2026/modules/oauth_tokens/oauth_tokens.php:17
+#0 /Applications/MAMP/htdocs/crm2026/adm/index.php(173): require_once()
+#1 {main}
+
+
