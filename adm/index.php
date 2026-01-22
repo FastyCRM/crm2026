@@ -17,6 +17,9 @@ if (!defined('ROOT_PATH')) {
     define('ROOT_PATH', dirname(__DIR__));
 }
 
+// Страховка: даже если кто-то редиректит поздно — заголовки ещё можно успеть отправить
+ob_start();
+
 require_once ROOT_PATH . '/core/bootstrap.php';
 require_once ROOT_PATH . '/core/modules.php';
 
@@ -42,14 +45,24 @@ if ($isAuth && $m === '') {
     $m = 'dashboard';
 }
 
+
+
 /**
- * Защита: если модуль отключён в БД — 404 (и view, и handler)
- * auth оставляем как системный (но он тоже у тебя в БД enabled=1).
+ * ВАЖНО: РАННИЙ ACL модуля ДО вывода HTML
+ * Иначе acl_guard внутри view может попытаться redirect после начала верстки -> headers already sent.
+ *
+ * Канон: роли модуля берём из БД через module_allowed_roles().
+ * Если roles пустой -> доступ всем ролям.
  */
-if ($m !== 'auth' && $m !== '') {
-    if (!module_is_enabled($m)) {
-        http_response_code(404);
-        exit('Module disabled');
+if ($isAuth && $m !== '' && $m !== 'auth') {
+    $userRole = auth_user_role(); // admin|manager|user
+    $allowedRoles = module_allowed_roles($m);
+
+    if (is_array($allowedRoles) && count($allowedRoles) > 0) {
+        if (!in_array($userRole, $allowedRoles, true)) {
+            // Не 302 на auth (он и так залогинен), а мягко в dashboard
+            redirect('/adm/index.php?m=dashboard&err=forbidden');
+        }
     }
 }
 
@@ -188,3 +201,6 @@ $moduleJsUrl  = '/modules/' . $m . '/assets/js/' . $m . '.js';
   <?php endif; ?>
 </body>
 </html>
+<?php
+// отдаём буфер в конце
+ob_end_flush();
